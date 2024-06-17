@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/users/head.ejs')%>
+<body>
+   <%- include('../../partials/users/header.ejs')%>
+    <section id="mid">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Blog Form</h2>
+      <form action="" method="post" enctype="multipart/form-data">
+        <label for="">Blog Title</label>
+        <input type="text" name="btitle" id="" class="form-control">
+        <label for="">blog description</label>
+        <input type="text" name="bdesc" id="" class="form-control">
+        <label for="">Blog Img</label>
+        <input type="file" name="img" id="" class="form-control mb-2">
+        <button type="reset" class="btn btn-danger me-2">Cancel</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+            </div>
+        </div>
+      </div>
+    </section>
+    <%- include('../../partials/users/footer.ejs')%>
+    
+</body>
+</html>

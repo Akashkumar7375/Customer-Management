@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/users/head.ejs')%>
+<body>
+   <%- include('../../partials/users/header.ejs')%>
+    <section id="mid">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <h2 class="text-center">My Blogs</h2>
+               <%if(message!='jj'){%>
+                  <p><%=message%></p>
+              <%}%>
+               
+      <a href="/user/addblogs"><button class="btn btn-dark form-control">Add new Blogs</button></a>
+   
+      <table class="table table-hover">
+        <tr>
+         <th>S.NO</th>
+         <th>blog Title</th>
+         <th>Blog Img</th>
+         <th>Blog descriptaion</th>
+         <th>Blog PostedDate</th>
+         <th>Blog Update</th>
+          <th>Blog Delete</th>
+        </tr>
+        <%data.forEach((value,key)=>{%>
+         <tr>
+            <td><%=key+1%></td>
+            <td><%=value.title%></td>
+            <td ><img style="width: 150px;" src="/uploads/<%=value.img%>" alt=""></td>
+            <td><%=value.desc%></td>
+            <td><%=value.postedDate%></td>
+            <td><a href="/user/updateblog/<%=value.id%>"><button class="btn btn-info">Update</button></a></td>
+            <td><a href="/user/deleteblog/<%=value.id%>"><button class="btn btn-danger">Delete</button></a></td>
+           </tr>
+        <%})%>
+
+        <%if(!data.length){%>
+        
+         <tr>
+            <td colspan="7"><h3  class="text-center">No Record Found</h3></td>
+         </tr>
+        <%}%>
+       
+        
+      </table>
+    
+            </div>
+         </div>
+      </div>
+    </section>
+    <%- include('../../partials/users/footer.ejs')%>
+    
+</body>
+</html>

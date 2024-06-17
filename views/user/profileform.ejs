@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/users/head.ejs')%>
+<body>
+   <%- include('../../partials/users/header.ejs')%>
+    <section id="mid">
+     <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <%if(message!='jj'){%>
+               <p class="alert alert-success"><%=message%></p>
+            <%}%>
+            
+            <h2>Profile Update</h2>
+
+           
+     <form action="/user/profile/<%=data.id%>" method="post">
+      <label for="">First Name</label>
+      <input type="text" name="fname" id="" class="form-control" value="<%=data.firstName%>">
+      <label for="">Last Name</label>
+      <input type="text" name="lname" id="" class="form-control" value="<%=data.lastName%>">
+      <label for="">Mobile</label>
+      <input type="text" name="mobile" id="" class="form-control mb-2" value="<%=data.mobile%>">
+      <label for="">Gender</label>
+      <div class="form-check">
+         <input type="radio" name="gender" id="" value="Male" class="form-check-input" <%=data.gender=='Male'?'checked':''%>>
+         <label for="" class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+         <input type="radio" name="gender" id="" value="Female" class="form-check-input" <%=data.gender=='Female'?'checked':''%>>
+         <label for="" class="form-check-label">Female</label>
+      </div>
+      <button type="reset" class="btn btn-danger">Cancel</button>
+      <button type="submit" class="btn btn-success">Update</button>
+     </form>
+         </div>
+      </div>
+     </div>
+    </section>
+    <%- include('../../partials/users/footer.ejs')%>
+    
+</body>
+</html>

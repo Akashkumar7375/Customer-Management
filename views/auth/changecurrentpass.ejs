@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/users/head.ejs')%>
+<body>
+   <%- include('../../partials/users/header.ejs')%>
+    <section id="mid">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <h2>Change Password</h2>
+               <%if(message!='jj'){%>
+                  <p class="alert alert-danger"><%=message%></p>
+               <%}%>
+               
+               <form action="" method="post">
+                  <label for="">Current Password</label>
+                  <input type="password" name="cpass" id="" class="form-control">
+                  <label for="">New Password</label>
+                  <input type="password" name="npass" id="" class="form-control">
+                  <label for="">Confirm Password</label>
+                  <input type="password" name="copass" id="" class="form-control mb-2">
+                  <button type="reset" class="btn btn-danger me-2">Cancel</button>
+                  <button type="submit" class="btn btn-success">Change Password</button>
+               </form>
+            </div>
+            
+         </div>
+      </div>
+    
+    </section>
+    <%- include('../../partials/users/footer.ejs')%>
+    
+</body>
+</html>

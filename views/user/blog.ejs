@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/users/head.ejs')%>
+<body>
+   <%- include('../../partials/users/header.ejs')%>
+    <section id="mid">
+      <div class="container">
+         <h2 class="text-center">All Blogs</h2>
+         <div class="row">
+            
+            <%alldata.forEach((value,key)=>{%>
+               <div class="col-md-6 mt-3 text-center">
+                  <div class="card">
+                     <img style="width: 150px;" src="/uploads/<%=value.img%>" class="card-img-top d-flex mx-auto" alt="...">
+                     <div class="card-body">
+                       <h2 class="card-title"><%=value.title%></h2>
+                       <p class="card-text"><%=value.desc%></p>
+                       <h3 class="card-text">Posted By-<%=value.user%></h3>
+                       <h4 class="card-text"><%=value.postedDate%></h4>
+
+                       
+                      
+                     </div>
+                   </div>
+               </div>
+           <%})%>
+           <%if(!alldata.length){%>
+        
+            
+               <div colspan="7"><h3  class="text-center">No Blogs</h3></div>
+           
+           <%}%>
+            
+         </div>
+      </div>
+    
+    </section>
+    <%- include('../../partials/users/footer.ejs')%>
+    
+</body>
+</html>

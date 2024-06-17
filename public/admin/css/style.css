@@ -1,0 +1,15 @@
+#header{
+    background:linear-gradient(to right ,rgb(10, 10, 220),rgb(77, 193, 202));
+    padding: 15px 0px;
+}
+#header button{
+  float: right;
+  margin-left: 10px;
+}
+#header h4{
+  color: white;
+}
+#mid .col-md-9{
+    border-left: 1px solid black;
+    height: 100%;
+}

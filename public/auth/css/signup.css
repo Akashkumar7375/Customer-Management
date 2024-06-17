@@ -1,0 +1,15 @@
+#signup .d1{
+    display: flex;
+    gap: 20px;
+}#signup h1{
+    color: rgb(14, 222, 90);
+    text-align: center;
+}
+#signup input{
+    margin-top: 10px;
+}
+#signup {
+    height: 92vh;
+    display: flex;
+    align-items: center;
+}

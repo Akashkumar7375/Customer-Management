@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../../partials/admin/head.ejs')%>
+<body>
+   <%- include('../../partials/admin/header.ejs')%>
+   <section id="mid">
+      <div class="container">
+         <div class="row">
+            <%- include('../../partials/admin/left.ejs')%>
+
+            <div class="col-md-9">
+              
+              <h2 class="text-center">All user</h2>
+              <%if(message!='jj'){%>
+                <p class="alert alert-success"><%=message%></p>
+             <%}%>
+             <table class="table">
+                <tr>
+                    <th>Total user:<%=tdata%></th>
+                    <th>Active:<%=tactive%></th>
+                    <th>Suspended<%=tsuspend%></th>
+                </tr>
+             </table>
+              <table class="table table-hover">
+               <tr>
+                 <th>S.No</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                  <th>Mobile No.</th>
+                  <th>Gender</th>
+                  <th>PostedDate</th>
+                  <th>Status</th>
+                  <th>Sub</th>
+               </tr>
+               <%data.forEach((value,key)=>{%>
+                  <tr>
+                     <td><%=key+1%></td>
+                     <td><%=value.firstName%></td>
+                     <td><%=value.lastName%></td>
+                     <td><%=value.email%></td>
+                     <td><%=value.mobile%></td>
+                     <td><%=value.gender%></td>
+                     <td><%=value.createPost%></td>
+                     <td><%=value.sub%></td>
+                     <%if(value.status=='Active'){%>
+                        <td><a href="/admin/updatealluser/<%=value.id%>/<%=value.status%>"><button class="btn btn-success"><%=value.status%></button></a></td>
+
+                        <%}else{%>
+                            <td><a href="/admin/updatealluser/<%=value.id%>/<%=value.status%>"><button class="btn btn-danger"><%=value.status%></button></a></td>
+                         <%}%>
+                  </tr>
+               <%})%>
+               
+
+              </table>
+            </div>
+         </div>
+      </div>
+   </section>
+  
+    
+   
+    
+</body>
+</html> 
